@@ -1,16 +1,15 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.*;
 
-public class Array_reverse {
-	public static void main(String args[]){
-		int n=0;
-		System.out.println("Enter the length of an array");
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n=scanner.nextInt();
 		try {
-			n=Integer.parseInt(new BufferedReader(new InputStreamReader(System.in)).readLine());
 			int a[]=new int[n];
 			for(int i=0;i<n;i++){
-				a[i]=Integer.parseInt(new BufferedReader(new InputStreamReader(System.in)).readLine());
+				a[i]=scanner.nextInt();
 			}
 			for(int i=0,j=n-1;i<(n/2);i++,j--){
 				a[i]=a[i]+a[j];
@@ -18,11 +17,10 @@ public class Array_reverse {
 				a[i]=a[i]-a[j];
 			}
 			for(int i=0;i<n;i++){
-				System.out.println(a[i]);
+				System.out.print(a[i]+" ");
 			}
-		} catch (NumberFormatException | IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
+    }
 }
